@@ -1,0 +1,303 @@
+:root {
+    --mainFont: 'Inter', sans-serif;
+    --blank: #ffffff;
+    --blankAcc: #e0e0e0;
+    --ichika: #FDF55C;
+    --ichikaAcc: #FED628;
+    --nino: #FC77B8;
+    --ninoAcc: #C940A2;
+    --miku: #6B95FC;
+    --mikuAcc: #0B4EFC;
+    --yotsuba: #5DE463;
+    --yotsubaAcc: #4AC49A;
+    --itsuki: #FC7A5A;
+    --itsukiAcc: #F6292F;
+}
+
+* {
+    font-family: var(--mainFont);
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 16px;
+}
+
+.assignmentCard {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    background-color: var(--blank);
+    border-radius: 48px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    border: solid 3px var(--blankAcc);
+}
+
+.assignmentCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 10px var(--blankAcc);
+}
+
+.assignmentCard .verticleBar {
+    width: 3px;
+    height: 4rem;
+    background-color: var(--blankAcc);
+    border-radius: 48px;
+}
+
+
+.lateAssignment {
+    border: solid 3px red;
+    box-shadow: 2px 2px 5px rgba(255, 0, 0, 1);
+}
+
+.lateAssignment .verticleBar {
+    background-color: red;
+}
+
+.ichika {
+    background-color: var(--ichika);
+    border: solid 3px var(--ichikaAcc);
+}
+
+.ichika .verticleBar {
+    background-color: var(--ichikaAcc);
+}
+
+.ichika:hover {
+    box-shadow: 4px 4px 10px var(--ichikaAcc);
+}
+
+.nino {
+    background-color: var(--nino);
+    border: solid 3px var(--ninoAcc);
+}
+
+.nino .verticleBar {
+    background-color: var(--ninoAcc);
+}
+
+.nino:hover {
+    box-shadow: 4px 4px 10px var(--ninoAcc);
+}
+
+.miku {
+    background-color: var(--miku);
+    border: solid 3px var(--mikuAcc);
+}
+
+.miku .verticleBar {
+    background-color: var(--mikuAcc);
+}
+
+.miku:hover {
+    box-shadow: 4px 4px 10px var(--mikuAcc);
+}
+
+.yotsuba {
+    background-color: var(--yotsuba);
+    border: solid 3px var(--yotsubaAcc);
+}
+
+.yotsuba .verticleBar {
+    background-color: var(--yotsubaAcc);
+}
+
+.yotsuba:hover {
+    box-shadow: 4px 4px 10px var(--yotsubaAcc);
+}
+
+.itsuki {
+    background-color: var(--itsuki);
+    border: solid 3px var(--itsukiAcc);
+}
+
+.itsuki .verticleBar {
+    background-color: var(--itsukiAcc);
+}
+
+.itsuki:hover {
+    box-shadow: 4px 4px 10px var(--itsukiAcc);
+}
+
+ul {
+    padding: 10px;
+    margin: 0;
+}
+
+.assignmentCard .assignmentCardContent {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+.assignmentCard .assignmentCardContent .countdown {
+    display: flex;
+    margin: 0px 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.assignmentCard .assignmentCardContent .assignemntInfo {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: 0px 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.assignmentCard .assignmentCardContent .assignemntInfo p {
+    flex: 1;
+    overflow-wrap: anywhere;
+    overflow-y: auto;
+    color: black;
+    text-decoration: none;
+}
+
+.assignmentCard .deleteButton {
+    display: grid;
+    place-items: center;
+    margin: 10px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 48px;
+    background-color: rgb(255, 150, 150, 1);
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+
+.assignmentCard .deleteButton:active {
+    background-color: #fa6464;
+}
+
+.assignmentCard .deleteButton .deleteButtonBar {
+    position: absolute;
+    background-color: black;
+    height: 0.25rem;
+    width: 1rem;
+    border-radius: 48px;
+    transition: all 0.2s;
+}
+
+.assignmentCard .deleteButton:hover .deleteButtonRight {
+    rotate: 45deg;
+}
+
+
+.assignmentCard .deleteButton:hover .deleteButtonLeft {
+    rotate: -45deg;
+}
+
+.lateAssignment:hover {
+    transform: translateY(-10px);
+    box-shadow: 8px 8px 8px rgba(255, 0, 0, 1);
+}
+
+#addAssignment {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: left;
+    max-width: 100%;
+}
+
+#addAssignment section {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#mainFooter {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin-top: 8px;
+    border: solid 1px black;
+    padding: 16px;
+    text-align: center;
+    font-size: 1.4rem;
+    background-color: #f0f0f0;
+    bottom: 0px;
+    z-index: 1000;
+}
+
+#mainFooter a {
+    text-decoration: none;
+    color: black;
+    bottom: 0;
+}
+
+.emptyLists {
+    visibility: visible;
+}
+
+.confirmDeletion {
+    padding: 5%;
+    position: fixed;
+    top: 25vh;
+    left: 10vh;
+    border: solid 8px black;
+    border-radius: 48px;
+    width: 80%;
+    height: 50vh;
+    text-align: center;
+    background-color: var(--blank);
+    border: solid 8px var(--blankAcc);
+    visibility: hidden;
+    z-index: 10000;
+}
+
+.confirmDeletion .confirmDeletionButtons {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 2rem;
+}
+
+.confirmDeletion .confirmDeletionButtons button {
+    width: 40%;
+    height: 8rem;
+    border-radius: 48px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirmDeletion .confirmDeletionButtons .confirmButton {
+    background-color: var(--yotsuba);
+    border: solid 16px var(--yotsubaAcc);
+    transition: all 0.3s;
+}
+
+.confirmDeletion .confirmDeletionButtons .confirmButton:hover {
+    background-color: var(--yotsubaAcc);
+    border: solid 16px var(--yotsuba);
+}
+
+.confirmDeletion .confirmDeletionButtons .cancelButton {
+    background-color: var(--itsuki);
+    border: solid 16px var(--itsukiAcc);
+    transition: all 0.3s;
+}
+
+.confirmDeletion .confirmDeletionButtons .cancelButton:hover {
+    background-color: var(--itsukiAcc);
+    border: solid 16px var(--itsuki);
+}
+
+.confirmDeletion p {
+    position: absolute;
+    bottom: 0%;
+    width: 90%;
+    text-align: center;
+    font-size: 1.2rem;
+}

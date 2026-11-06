@@ -212,7 +212,7 @@ ul {
 
 
 #addAssignment #inpDescription {
-    max-width: calc(100vw - 512px);
+    max-width: calc(max(100vw - 512px, 28vw));
 }
 
 #addAssignment section {
@@ -311,10 +311,6 @@ ul {
     width: 90%;
     text-align: center;
     font-size: 1.2rem;
-}
-
-@media (max-width: 99.99px) {
-    /* Styles apply strictly when the width is less than 100px */
 }
 
 @media (max-width: 100px) {

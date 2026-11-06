@@ -1,6 +1,13 @@
 const form = document.getElementById('addAssignment');
 const todolist = document.querySelector('.todoList');
 
+function stripHtml(htmlString) {
+    return htmlString;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    return doc.body.textContent || "";
+}
+
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -11,8 +18,8 @@ form.addEventListener('submit', function (event) {
 
 
     const basicCard = `
-        <li class="assignmentCard ${tagInput}">
-            <a href="https://${linkInput}" class="assignmentCardContent" target="_blank">
+        <li class="assignmentCard ${stripHtml(tagInput)}">
+            <a href="https://${stripHtml(linkInput)}" class="assignmentCardContent" target="_blank">
                 <section class="countdown">
                     <span class="days">00</span>
                     <span>:</span>
@@ -24,8 +31,8 @@ form.addEventListener('submit', function (event) {
                 </section>
                 <div class="verticleBar"></div>
                 <section class="assignemntInfo">
-                    <h3>${nameInput}</h3>
-                    <p>${descriptionInput}</p>
+                    <h3>${stripHtml(nameInput)}</h3>
+                    <p>${stripHtml(descriptionInput)}</p>
                 </section>
             </a>
             <button type="button" class="deleteButton">
